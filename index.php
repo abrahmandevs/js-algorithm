@@ -3,12 +3,6 @@
 	include('header.php');
 
 ?>
-
-	
-	<header>
-		<?php include("home-nav.php") ?>
-		<?php include("home-toggle-nav.php") ?>
-	</header>
 	<main>
 		<?php //include("home-nav.php") ?>
 	</main>

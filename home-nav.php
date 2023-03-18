@@ -5,11 +5,11 @@
 		<div class="flex items-center space-x-4 py-1.5">
 			<!-- logo -->
 			<div class="relative z-10 hidden lg:block">
-				<a href="#" ><img src="images/demo/logo.png" class="h-12 px-4" alt="logo"></a>
+				<a href="<?php echo $baseUrl?>" class=""><img src="<?php echo $baseUrl?>images/demo/logo-terminal-1.png" class="h-10 bg-gray-200/40 rounded-lg  px-4" alt="logo"></a>
 			</div>
 			<!-- home -->
 			<div x-data="{ dropdown: false }" x-init="init()" @keydown.escape.stop="dropdown = false; focusButton()" @click.away="dropdown = false" class="relative z-10">
-				<a href="" class="text-gray-300  hover:text-gray-400 px-2 transition-all duration-300" id="user-menu-button" x-ref="button" @click="dropdown =! dropdown" @keyup.space.prevent="dropdown =! dropdown" @keydown.enter.prevent="dropdown =! dropdown" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+				<a href="<?php echo $baseUrl?>" class="text-gray-300  hover:text-gray-400 px-2 transition-all duration-300" id="user-menu-button" x-ref="button" @click="dropdown =! dropdown" @keyup.space.prevent="dropdown =! dropdown" @keydown.enter.prevent="dropdown =! dropdown" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
 					<span class="sr-only">Open user menu</span>
 					Home
 				</a>
@@ -18,13 +18,27 @@
 					<a href="index.php" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Home</a>
 				</div>-->
 			</div>
-			<!-- Pages -->
+			<!-- javascpirt -->
+			<div x-data="{ dropdown: false }" x-init="init()" @keydown.escape.stop="dropdown = false; focusButton()" @click.away="dropdown = false" class="relative z-10">
+				<button type="button" class="text-gray-300  hover:text-gray-400 px-2 transition-all duration-300" id="user-menu-button" x-ref="button" @click="dropdown =! dropdown" @keyup.space.prevent="dropdown =! dropdown" @keydown.enter.prevent="dropdown =! dropdown" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+					Javascript
+				</button>
+				<div class="capitalize max-h-0 overflow-hidden absolute inset-0 bottom-auto mt-10 w-56 rounded-md shadow-lg px-5 bg-white transition-all duration-500" x-ref="dropdown1" :class="dropdown = dropdown ? 'pb-2.5 border-t-4 border-yellow-400' : '' " :style="dropdown = dropdown ?  'max-height: '+ $refs.dropdown1.scrollHeight + 'px' :'' ">
+					<a href="<?php echo $baseUrl; ?>draggable-element.php" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Draggable Element</a>
+					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">About me</a>
+					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Client</a>
+					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">History</a>
+					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Profile</a>
+					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Comming soon</a>
+				</div>
+			</div>
+			<!-- dom -->
 			<div x-data="{ dropdown: false }" x-init="init()" @keydown.escape.stop="dropdown = false; focusButton()" @click.away="dropdown = false" class="relative z-10">
 				<button type="button" class="text-gray-300  hover:text-gray-400 px-2 transition-all duration-300" id="user-menu-button" x-ref="button" @click="dropdown =! dropdown" @keyup.space.prevent="dropdown =! dropdown" @keydown.enter.prevent="dropdown =! dropdown" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
 					Dom
 				</button>
 				<div class="capitalize max-h-0 overflow-hidden absolute inset-0 bottom-auto mt-10 w-56 rounded-md shadow-lg px-5 bg-white transition-all duration-500" x-ref="dropdown1" :class="dropdown = dropdown ? 'pb-2.5 border-t-4 border-yellow-400' : '' " :style="dropdown = dropdown ?  'max-height: '+ $refs.dropdown1.scrollHeight + 'px' :'' ">
-					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">About us</a>
+					<a href="<?php echo $baseUrl?>dom/generateRGB.php" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Generate RGB</a>
 					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">About me</a>
 					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">Client</a>
 					<a href="#" class="block py-1.5 text-gray-700 text-medium hover:text-yellow-500 transform hover:translate-x-2 transition-all duration-500" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="dropdown = false; focusButton()">History</a>
