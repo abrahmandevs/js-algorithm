@@ -4,11 +4,6 @@
 
 ?>
 
-	
-	<header>
-		<?php include("home-nav.php") ?>
-		<?php include("home-toggle-nav.php") ?>
-	</header>
 	<main>
 		<div class="h-full w-full flex flex-col items-center justify-center">
 			<div id="dragAble" class="grow m-auto border border-indigo-700 w-[500px] rounded-md absolute top-[50%] right-[50%]">
